@@ -123,6 +123,13 @@ class Sudoku_solver(object):
                 if type(item) == int:
                     if item in check: return True #Repetido
                     else: check.append(item)
+        #Verificar repetidos en cuadrado:
+        pos=[(2,2), (2,5), (2,8), (5,2), (5,5), (5,8), (8,2), (8,5), (8,8)]
+        for i in pos:
+            check = []
+            for item in self.get_square(i[0],i[1]):
+                if item in check: return True #Repetido
+                else: check.append(item)
         return False
 
     def solve(self):
