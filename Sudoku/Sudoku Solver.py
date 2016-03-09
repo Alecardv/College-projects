@@ -70,7 +70,7 @@ class Sudoku_solver(object):
             self.reduce_lines('v')
             self.reduce_square()
             if not self.reduce_onlyone(): break
-                
+
     def check_state(self):
     ## -1:No solucionable - 0:Continuable - 1:Solucionado
         state = 1
@@ -123,7 +123,7 @@ class Sudoku_solver(object):
                 if type(item) == int:
                     if item in check: return True #Repetido
                     else: check.append(item)
-        #Verificar repetidos en cuadrado:
+        #Verificar repetidos en cuadrante:
         pos=[(2,2), (2,5), (2,8), (5,2), (5,5), (5,8), (8,2), (8,5), (8,8)]
         for i in pos:
             check = []
@@ -142,15 +142,18 @@ class Sudoku_solver(object):
             global iterations
             iterations += 1
             return False
-        
+
         #En este punto el estado no es solucion pero tampoco es invalido.
         #Viendo la solucion como arboles, existirian tantos arboles como elementos
-        #en el dominio que escojamos. Asi que busco el primer dominio e intento resolver 
+        #en el dominio que escojamos. Asi que busco el primer dominio e intento resolver
         #usando cada uno de sus elementos, alfin y al cabo uno de ellos me llevara al estado solucion
+        s = False
         for i in range(9):
+            if s: break
             for j in range(9):
                 if type(self.board[i][j]) == list:
                     t = [self.board[i][j], i, j] #Guardo el dominio y su posicion
+                    s = True
                     break
 
         for item in t[0]:
@@ -284,7 +287,7 @@ if __name__ == '__main__':
              [0,0,8,5,0,0,0,1,0],
              [0,9,0,0,0,0,4,0,0]]
 
-    sdk = Sudoku_solver(sudk8)
+    sdk = Sudoku_solver(sudk7)
     sdk.solve()
     print (sdk)
     print ('In ' + str(iterations) + ' iterations.')
