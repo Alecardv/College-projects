@@ -34,7 +34,7 @@ int expt(int NUM, int exp)
 		}
 	};
 		return lambda();
-	}
+}
 	
 //3. Secuencia del 2
 void secuencia(int N)
