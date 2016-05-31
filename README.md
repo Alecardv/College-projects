@@ -1,5 +1,11 @@
-# College Projects
+## College Projects
 
-This repo contains some of my projects at *Universidad Tecnologica de Pereira* while i was studying Computer Engineering.
+This repo contains some of the projects I made while studying Computer Engineering at **Universidad Tecnologica de Pereira**.
 
-If you found a subfolder named Alecardv, it means that's my solution and the others are from other authors that are mentioned in their respective source file, thats because I was inspired by that other solution or the mine does not work at all.
+Feel free to explore and use all you ever need, just remember reference this repository as source.
+
+## Proyectos de la Universidad
+
+Este repositorio contiene algunos de los proyectos que realice mientras estudiaba Ingenieria en sistemas en la **Universidad Tecnologica de Pereira**.
+
+Sientete libre de explorar y usar todo lo que necesistes, solo recuerda agregar una referencia a este repositorio como la fuente.
