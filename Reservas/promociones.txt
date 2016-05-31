@@ -1,0 +1,12 @@
+Armenia AR001
+Barranquilla BR002
+Bucaramanga BC003
+Cartagena CR004
+Cucuta CC005
+Yopal YP005
+Ibague IB006
+Manizales MN007
+Medellin MD008
+Neiva NV009
+Bogota BG010
+Cali CL011
