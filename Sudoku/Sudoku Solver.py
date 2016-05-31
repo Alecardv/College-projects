@@ -144,14 +144,17 @@ class Sudoku_solver(object):
     def solve(self):
         # Funcion maestra que intenta resolver el tablero:
         # Se reducen todos los dominios y se verifica el estado del tablero
+
+        global iterations
+        iterations += 1
+
         self.reduce_all()
         state = self.check_state()
         if state == 1:
             print('SOLVED')
             return True
         elif state == -1:
-            global iterations
-            iterations += 1
+
             return False
 
         # En este punto el estado no es solucion pero tampoco es invalido.
@@ -170,9 +173,9 @@ class Sudoku_solver(object):
         for item in t[0]:
             aux_board = copy.deepcopy(self.board)
             aux_board[t[1]][t[2]] = item
-            sub = Sudoku_solver(aux_board)  # Creo un nuevo tablero e intento resolverlo
-            if sub.solve():
-                self.board = copy.deepcopy(sub.board)
+            aux_solver = Sudoku_solver(aux_board)  # Creo un nuevo tablero e intento resolverlo
+            if aux_solver.solve():
+                self.board = copy.deepcopy(aux_solver.board)
                 return True
         return False
 
@@ -290,7 +293,7 @@ if __name__ == '__main__':
              [0, 0, 0, 0, 2, 9, 0, 0, 0],
              [6, 0, 1, 5, 0, 0, 0, 0, 0]]
 
-    sudk8 = [[8, 0, 0, 0, 0, 0, 0, 0, 0],  # World hardest Sudoku
+    sudk8 = [[8, 0, 0, 0, 0, 0, 0, 0, 0],  
              [0, 0, 3, 6, 0, 0, 0, 0, 0],
              [0, 7, 0, 0, 9, 0, 2, 0, 0],
              [0, 5, 0, 0, 0, 7, 0, 0, 0],
@@ -299,6 +302,7 @@ if __name__ == '__main__':
              [0, 0, 1, 0, 0, 0, 0, 6, 8],
              [0, 0, 8, 5, 0, 0, 0, 1, 0],
              [0, 9, 0, 0, 0, 0, 4, 0, 0]]
+
 
     sdk = Sudoku_solver(sudk8)
     sdk.solve()
