@@ -22,8 +22,7 @@ _256 = pygame.image.load("256.jpg"); _256re = _256.get_rect()
 _512 = pygame.image.load("512.jpg"); _512re = _512.get_rect()
 _1024 = pygame.image.load("1024.jpg"); _1024re = _1024.get_rect()
 _2048 = pygame.image.load("2048.jpg"); _2048re = _2048.get_rect()
-## Las imagenes aunque pertenecen a la interface son estaticas y generales para cada factor
-## de forma, por eso van en el control
+
 figs = {2:(_2, _2re), 4:(_4,_4re), 8:(_8,_8re), 16:(_16,_16re),
    32:(_32,_32re), 64:(_64,_64re), 128:(_128,_128re), 256:(_256,_256re),
    512:(_512,_512re), 1024:(_1024,_1024re), 2048:(_2048,_2048re)}
